@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-bebas);
+  --font-sans: var(--font-inter);
+}
+
+@theme {
+  /* Vice City / Leonida palette */
+  --color-vice-950: #090514;
+  --color-vice-900: #130826;
+  --color-vice-800: #1d0e38;
+  --color-vice-700: #2b1652;
+  --color-vice-600: #3d1e75;
+  --color-neon-pink: #ff2e88;
+  --color-neon-magenta: #f0abfc;
+  --color-neon-purple: #a855f7;
+  --color-neon-cyan: #22d3ee;
+  --color-sunset-orange: #ff7a18;
+  --color-sunset-yellow: #ffd166;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-vice-950);
+  color: #f1eef8;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-neon-pink);
+  color: #fff;
+}
+
+/* Sunset gradient text (pink -> orange -> purple) */
+.text-sunset {
+  background: linear-gradient(
+    90deg,
+    #ffd166 0%,
+    #ff7a18 35%,
+    #ff2e88 70%,
+    #a855f7 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Neon glow for display headings */
+.glow-pink {
+  text-shadow:
+    0 0 18px rgba(255, 46, 136, 0.55),
+    0 0 42px rgba(255, 46, 136, 0.25);
+}
+
+.glow-cyan {
+  text-shadow:
+    0 0 18px rgba(34, 211, 238, 0.55),
+    0 0 42px rgba(34, 211, 238, 0.25);
+}
+
+/* ---- MDX guide body ---- */
+.mdx {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #d9d2e8;
+  overflow-wrap: break-word;
+}
+
+.mdx > *:first-child {
+  margin-top: 0;
+}
+
+.mdx h2 {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin: 2.25rem 0 0.75rem;
+}
+
+.mdx h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  color: #fff;
+  margin: 1.75rem 0 0.5rem;
+}
+
+.mdx h4 {
+  font-weight: 700;
+  color: #fff;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.mdx p {
+  margin: 0 0 1rem;
+}
+
+.mdx a {
+  color: var(--color-neon-cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mdx a:hover {
+  color: var(--color-neon-magenta);
+}
+
+.mdx strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.mdx ul,
+.mdx ol {
+  margin: 0 0 1rem 1.25rem;
+  padding-left: 0.5rem;
+}
+
+.mdx ul {
+  list-style: disc;
+}
+
+.mdx ol {
+  list-style: decimal;
+}
+
+.mdx li {
+  margin-bottom: 0.35rem;
+}
+
+.mdx li::marker {
+  color: var(--color-neon-pink);
+}
+
+.mdx blockquote {
+  border-left: 3px solid var(--color-neon-pink);
+  padding: 0.25rem 0 0.25rem 1rem;
+  margin: 1.25rem 0;
+  color: #b9aed2;
+  font-style: italic;
+}
+
+.mdx code {
+  background: var(--color-vice-800);
+  border: 1px solid var(--color-vice-700);
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.3rem;
+  font-size: 0.85em;
+  color: var(--color-neon-magenta);
+}
+
+.mdx pre {
+  background: var(--color-vice-900);
+  border: 1px solid var(--color-vice-700);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.mdx pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #e9e4f5;
+}
+
+.mdx table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.mdx th,
+.mdx td {
+  border: 1px solid var(--color-vice-700);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.mdx th {
+  background: var(--color-vice-800);
+  color: #fff;
+  font-weight: 700;
+}
+
+.mdx hr {
+  border-color: var(--color-vice-700);
+  margin: 2rem 0;
+}
+
+.mdx img {
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
